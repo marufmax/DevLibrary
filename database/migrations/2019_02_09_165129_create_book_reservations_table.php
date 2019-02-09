@@ -24,7 +24,6 @@ class CreateBookReservationsTable extends Migration
             $table->dateTime('return_date');
             $table->dateTime('returned_at');
 
-
             $table->timestamps();
         });
     }
