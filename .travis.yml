@@ -2,6 +2,7 @@ language: php
 
 php:
   - 7.2
+
 before_script:
   - cp .env.travis .env
   - composer self-update
@@ -19,7 +20,7 @@ before_install:
 script:
   - vendor/bin/phpunit
 
-  services:
+services:
   - mysql
 
 cache:
