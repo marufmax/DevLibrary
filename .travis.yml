@@ -2,7 +2,6 @@ language: php
 
 php:
   - 7.2
-  - 7.0
   - 7.1
 
 before_script:
@@ -10,7 +9,7 @@ before_script:
   - composer self-update
   - composer install --no-interaction
   - php artisan key:generate
-  - php artisan migrate -step
+  - php artisan migrate
 
 before_install:
 - mysql -e 'CREATE DATABASE devLibrary_testing;'
