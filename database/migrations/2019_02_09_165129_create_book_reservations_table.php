@@ -19,7 +19,7 @@ class CreateBookReservationsTable extends Migration
             $table->unsignedInteger('user_id');
             $table->foreign('user_id')->references('user_id')->on('users')->onDelete('cascade');
 
-            $table->enum('status');
+            $table->enum('status', ['not_available', 'available']);
             $table->dateTime('issue_date');
             $table->dateTime('return_date');
             $table->dateTime('returned_at');
