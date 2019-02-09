@@ -1,27 +1,28 @@
 language: php
 
 php:
-- 7.1
-
+  - 7.2
 before_script:
-  - phpenv config-rm xdebug.ini || true
-  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-  - chmod +x ./cc-test-reporter
-  - composer install --prefer-source --no-interaction --dev
   - cp .env.travis .env
+  - composer self-update
+  - composer install --no-interaction
+  - php artisan key:generate
   - php artisan migrate
-  - ./cc-test-reporter before-build
+  - rm -rf ~/.nvm && git clone https://github.com/creationix/nvm.git ~/.nvm && (cd ~/.nvm && git checkout `git describe --abbrev=0 --tags`) && source ~/.nvm/nvm.sh && nvm install $TRAVIS_NODE_VERSION
+  - npm install --global gulp-cli
+  - npm install
+  - gulp --production
 
-  before_install:
-  - phpenv config-rm xdebug.ini || true
-  - cp .env.travis .env
-  - mysql -e 'CREATE DATABASE devLibrary_testing;'
-
-
-
-install:
-  -  travis_retry composer install --no-interaction --prefer-source
+before_install:
+- mysql -e 'CREATE DATABASE devLibrary_testing;'
 
 script:
-  - "phpunit --coverage-text --coverage-clover build/logs/clover.xml"
-  - if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then ./cc-test-reporter after-build  -t clover --exit-code $TRAVIS_TEST_RESULT; fi
+  - vendor/bin/phpunit
+
+  services:
+  - mysql
+
+cache:
+  directories:
+    - node_modules
+    - vendor
