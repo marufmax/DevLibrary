@@ -1,6 +1,6 @@
 ## DevLibrary
 <a href="https://github.styleci.io/repos/169881394"><img src="https://github.styleci.io/repos/169881394/shield"></a>
-</p>
+</p> [![Build Status](https://travis-ci.org/marufmax/DevLibrary.svg?branch=master)](https://travis-ci.org/marufmax/DevLibrary)
 
 ## License
 
