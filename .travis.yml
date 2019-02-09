@@ -2,17 +2,15 @@ language: php
 
 php:
   - 7.2
+  - 7.0
+  - 7.1
 
 before_script:
   - cp .env.travis .env
   - composer self-update
   - composer install --no-interaction
   - php artisan key:generate
-  - php artisan migrate
-  - rm -rf ~/.nvm && git clone https://github.com/creationix/nvm.git ~/.nvm && (cd ~/.nvm && git checkout `git describe --abbrev=0 --tags`) && source ~/.nvm/nvm.sh && nvm install $TRAVIS_NODE_VERSION
-  - npm install --global gulp-cli
-  - npm install
-  - gulp --production
+  - php artisan migrate -step
 
 before_install:
 - mysql -e 'CREATE DATABASE devLibrary_testing;'
