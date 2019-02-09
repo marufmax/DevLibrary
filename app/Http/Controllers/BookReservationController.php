@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\BookReservation;
 use Illuminate\Http\Request;
+use App\Models\BookReservation;
 
 class BookReservationController extends Controller
 {
