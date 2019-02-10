@@ -15,10 +15,10 @@ before_install:
 - mysql -e 'CREATE DATABASE devLibrary_testing;'
 
 script:
-  - vendor/bin/phpunit -c phpunit.xml
+  - vendor/bin/phpunit --coverage-clover build/logs/clover.xml
 
 after_script:
-  - php vendor/bin/coveralls -v
+  - php vendor/bin/coveralls --exclude-no-stmt
 
 services:
   - mysql
