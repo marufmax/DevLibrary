@@ -1,33 +1,58 @@
+import $ from 'jquery';
+import Vue from 'vue';
+import VueNoty from 'vuejs-noty';
+import axios from 'axios';
 
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
+window.$ = window.jQuery = $;
+window.axios = axios;
+require('bootstrap');
 
-require('./bootstrap');
+Vue.use(VueNoty, {
+	progressBar: false,
+	layout: 'bottomRight',
+	theme: 'bootstrap-v4',
+	timeout: 3000
+});
 
-window.Vue = require('vue');
+import router from './router';
+import store from './store/index';
+import App from './components/App.vue';
+import jwtToken from './helpers/jwt-token';
 
-/**
- * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
- *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
- */
+axios.interceptors.request.use(config => {
+	config.headers['X-CSRF-TOKEN'] = window.Laravel.csrfToken;
+	config.headers['X-Requested-With'] = 'XMLHttpRequest';
 
-// const files = require.context('./', true, /\.vue$/i)
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
+	if (jwtToken.getToken()) {
+		config.headers['Authorization'] = 'Bearer ' + jwtToken.getToken();
+	}
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+	return config;
+}, error => {
+	return Promise.reject(error);
+});
 
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
+axios.interceptors.response.use(response => {
+	return response;
+}, error => {
+	let errorResponseData = error.response.data;
+
+	const errors = ["token_invalid", "token_expired", "token_not_provided"];
+
+	if (errorResponseData.error && errors.includes(errorResponseData.error)) {
+		store.dispatch('unsetAuthUser')
+			.then(() => {
+				jwtToken.removeToken();
+				router.push({name: 'login'});
+			});
+	}
+
+	return Promise.reject(error);
+});
+
+Vue.component('app', App);
 
 const app = new Vue({
-    el: '#app'
-});
+	router,
+	store
+}).$mount('#app');
