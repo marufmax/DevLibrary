@@ -9,6 +9,16 @@ Minimun requirments:
 - Composer
 - Node
 
+
+
+## Installation
+
+- Clone this repo 
+- run `composer install && npm install` from terminal/cmd line.
+- create a database and put database configuration in `.env` file. 
+- run `php artisan serve` from cmd line or terminal. 
+- If any problem happens open a new issue
+
 ## License
 
 The DevLibaray is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).

@@ -4,6 +4,7 @@ import ProfileWrapper from './components/profile/ProfileWrapper.vue';
 import Profile from './components/profile/Profile.vue';
 import EditProfile from './components/profile/edit-profile/EditProfile.vue';
 import EditPassword from './components/profile/edit-password/EditPassword.vue';
+import Signup from './components/signup/Signup.vue';
 
 export default [
 	{
@@ -17,6 +18,12 @@ export default [
 		name: 'login',
 		component: Login,
 		meta: {requiresGuest: true}
+	},
+	{
+		path: '/sign-up',
+		name: 'signup',
+		component: Signup,
+		meta: {	requiresGuest: true}
 	},
 	{
 		path: '/profile',

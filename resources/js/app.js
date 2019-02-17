@@ -2,17 +2,19 @@ import $ from 'jquery';
 import Vue from 'vue';
 import VueNoty from 'vuejs-noty';
 import axios from 'axios';
+import Buefy from 'buefy';
 
 window.$ = window.jQuery = $;
 window.axios = axios;
-require('bootstrap');
 
 Vue.use(VueNoty, {
 	progressBar: false,
-	layout: 'bottomRight',
+	layout: 'topLeft',
 	theme: 'bootstrap-v4',
 	timeout: 3000
 });
+
+Vue.use(Buefy)
 
 import router from './router';
 import store from './store/index';

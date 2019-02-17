@@ -7,7 +7,7 @@
         <meta name="description" content="Laravel Vue SPA">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name') }} - Starter Boilerplate SPA made with Laravel 5.6, Bootstrap 4, JWT Auth, Vue 2, Vue-router 3, Vuex 3, Axios and <3</title>
+        <title>DevLibrary.io</title>
 
         <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
         <script>
