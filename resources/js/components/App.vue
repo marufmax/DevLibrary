@@ -1,9 +1,11 @@
 <template>
 	<div>
 		<top-menu></top-menu>
-		<transition name="fade" mode="out-in">
-			<router-view></router-view>
-		</transition>
+		<div class="m-t-lg">
+			<transition name="fade" mode="out-in">
+				<router-view></router-view>
+			</transition>
+		</div>
 		<app-footer></app-footer>
 	</div>
 </template>

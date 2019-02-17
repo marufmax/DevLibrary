@@ -33,8 +33,8 @@
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
-        	<router-link :to="{name: 'signup'}" class="button is-primary"> <strong>Sign up</strong> </router-link>
-          <router-link :to="{name: 'login'}" class="button is-light"> <strong>Log In</strong> </router-link>
+        	<router-link v-show="!isLoggedIn" :to="{name: 'signup'}" class="button is-primary"> <strong>Sign up</strong> </router-link>
+          <router-link v-show="!isLoggedIn" :to="{name: 'login'}" class="button is-light"> <strong>Log In</strong> </router-link>
         </div>
       </div>
     </div>

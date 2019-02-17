@@ -43421,6 +43421,91 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
@@ -43432,9 +43517,136 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("h1", [_vm._v(" Hello")])
+  return _vm._m(0)
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "container" }, [
+      _c("div", { staticClass: "field" }, [
+        _c("label", { staticClass: "label" }, [_vm._v("Name")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "control" }, [
+          _c("input", {
+            staticClass: "input",
+            attrs: { type: "text", placeholder: "Text input" }
+          })
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "field" }, [
+        _c("label", { staticClass: "label" }, [_vm._v("Username")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "control has-icons-left has-icons-right" }, [
+          _c("input", {
+            staticClass: "input is-success",
+            attrs: { type: "text", placeholder: "Text input", value: "bulma" }
+          }),
+          _vm._v(" "),
+          _c("span", { staticClass: "icon is-small is-left" }, [
+            _c("i", { staticClass: "fas fa-user" })
+          ]),
+          _vm._v(" "),
+          _c("span", { staticClass: "icon is-small is-right" }, [
+            _c("i", { staticClass: "fas fa-check" })
+          ])
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "help is-success" }, [
+          _vm._v("This username is available")
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "field" }, [
+        _c("label", { staticClass: "label" }, [_vm._v("Email")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "control has-icons-left has-icons-right" }, [
+          _c("input", {
+            staticClass: "input is-danger",
+            attrs: {
+              type: "email",
+              placeholder: "Email input",
+              value: "hello@"
+            }
+          }),
+          _vm._v(" "),
+          _c("span", { staticClass: "icon is-small is-left" }, [
+            _c("i", { staticClass: "fas fa-envelope" })
+          ]),
+          _vm._v(" "),
+          _c("span", { staticClass: "icon is-small is-right" }, [
+            _c("i", { staticClass: "fas fa-exclamation-triangle" })
+          ])
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "help is-danger" }, [
+          _vm._v("This email is invalid")
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "field" }, [
+        _c("label", { staticClass: "label" }, [_vm._v("Subject")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "control" }, [
+          _c("div", { staticClass: "select" }, [
+            _c("select", [
+              _c("option", [_vm._v("Select dropdown")]),
+              _vm._v(" "),
+              _c("option", [_vm._v("With options")])
+            ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "field" }, [
+        _c("label", { staticClass: "label" }, [_vm._v("Message")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "control" }, [
+          _c("textarea", {
+            staticClass: "textarea",
+            attrs: { placeholder: "Textarea" }
+          })
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "field" }, [
+        _c("div", { staticClass: "control" }, [
+          _c("label", { staticClass: "checkbox" }, [
+            _c("input", { attrs: { type: "checkbox" } }),
+            _vm._v("\n      I agree to the "),
+            _c("a", { attrs: { href: "#" } }, [_vm._v("terms and conditions")])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "field" }, [
+        _c("div", { staticClass: "control" }, [
+          _c("label", { staticClass: "radio" }, [
+            _c("input", { attrs: { type: "radio", name: "question" } }),
+            _vm._v("\n      Yes\n    ")
+          ]),
+          _vm._v(" "),
+          _c("label", { staticClass: "radio" }, [
+            _c("input", { attrs: { type: "radio", name: "question" } }),
+            _vm._v("\n      No\n    ")
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "field is-grouped" }, [
+        _c("div", { staticClass: "control" }, [
+          _c("button", { staticClass: "button is-link" }, [_vm._v("Submit")])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "control" }, [
+          _c("button", { staticClass: "button is-text" }, [_vm._v("Cancel")])
+        ])
+      ])
+    ])
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -43501,6 +43713,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__shared_TopMenu_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__shared_TopMenu_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_AppFooter_vue__ = __webpack_require__(84);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_AppFooter_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__shared_AppFooter_vue__);
+//
+//
 //
 //
 //
@@ -43756,6 +43970,14 @@ var render = function() {
                   _c(
                     "router-link",
                     {
+                      directives: [
+                        {
+                          name: "show",
+                          rawName: "v-show",
+                          value: !_vm.isLoggedIn,
+                          expression: "!isLoggedIn"
+                        }
+                      ],
                       staticClass: "button is-primary",
                       attrs: { to: { name: "signup" } }
                     },
@@ -43765,6 +43987,14 @@ var render = function() {
                   _c(
                     "router-link",
                     {
+                      directives: [
+                        {
+                          name: "show",
+                          rawName: "v-show",
+                          value: !_vm.isLoggedIn,
+                          expression: "!isLoggedIn"
+                        }
+                      ],
                       staticClass: "button is-light",
                       attrs: { to: { name: "login" } }
                     },
@@ -43896,7 +44126,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 
 
@@ -43939,16 +44168,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("span", [
-      _vm._v(_vm._s(_vm.currentYear) + ",\n\t\tdeveloped by "),
-      _c(
-        "a",
-        {
-          attrs: { href: "http://github.com/anindya-dhruba", target: "_blank" }
-        },
-        [_vm._v("Anindya Dhruba")]
-      )
-    ])
+    return _c("span", [_vm._v(_vm._s(_vm.currentYear) + " ")])
   }
 ]
 render._withStripped = true
@@ -43974,9 +44194,16 @@ var render = function() {
       _c("top-menu"),
       _vm._v(" "),
       _c(
-        "transition",
-        { attrs: { name: "fade", mode: "out-in" } },
-        [_c("router-view")],
+        "div",
+        { staticClass: "m-t-lg" },
+        [
+          _c(
+            "transition",
+            { attrs: { name: "fade", mode: "out-in" } },
+            [_c("router-view")],
+            1
+          )
+        ],
         1
       ),
       _vm._v(" "),
